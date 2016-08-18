@@ -16,7 +16,7 @@ class CreateChessPiecesTable extends Migration
             $table->increments('id');
             $table->string('code', 2);
             $table->string('name');
-            $table->binary('is_dark');
+            $table->boolean('is_dark');
             $table->timestamps();
         });
     }
