@@ -9,7 +9,7 @@ use App\Http\Requests;
 class ChessboardController extends Controller
 {
     /**
-     * Deliver initial position of chess pieces.
+     * Initial position of chess pieces.
      *
      */
     public function index()
