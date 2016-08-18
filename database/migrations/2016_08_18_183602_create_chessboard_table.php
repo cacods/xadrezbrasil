@@ -16,7 +16,10 @@ class CreateChessboardTable extends Migration
             $table->increments('id');
             $table->char('file');
             $table->tinyInteger('rank')->unsigned();
+            $table->integer('current_piece')->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('current_piece')->references('id')->on('chess_pieces');
         });
     }
 
