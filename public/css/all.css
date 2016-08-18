@@ -1,0 +1,16 @@
+/* Ref: http://cssdeck.com/labs/css-chess-board */
+/* Ref: http://code2care.org/pages/chessboard-with-pieces-using-pure-html-and-css */
+table.chessboard {
+    margin:70px auto;
+    background: #999;
+    border: 25px solid #333;
+    border-collapse: separate;
+}
+td.chessboard-cell {
+    width: 70px; height: 70px;
+}
+tr.chessboard-row:nth-child(odd) td.chessboard-cell:nth-child(even),
+tr.chessboard-row:nth-child(even) td.chessboard-cell:nth-child(odd) {
+    background: white;
+}
+/*# sourceMappingURL=all.css.map */
