@@ -14,7 +14,7 @@ class CreateChessPiecesTable extends Migration
     {
         Schema::create('chess_pieces', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('code', 2);
+            $table->string('code', 2);
             $table->string('name');
             $table->binary('is_dark');
             $table->timestamps();
