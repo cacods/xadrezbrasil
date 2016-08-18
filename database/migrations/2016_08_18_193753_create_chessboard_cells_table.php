@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChessboardTable extends Migration
+class CreateChessboardCellsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateChessboardTable extends Migration
      */
     public function up()
     {
-        Schema::create('chessboard', function (Blueprint $table) {
+        Schema::create('chessboard_cells', function (Blueprint $table) {
             $table->increments('id');
             $table->char('file');
             $table->tinyInteger('rank')->unsigned();
@@ -30,6 +30,6 @@ class CreateChessboardTable extends Migration
      */
     public function down()
     {
-        Schema::drop('chessboard');
+        Schema::drop('chessboard_cells');
     }
 }
