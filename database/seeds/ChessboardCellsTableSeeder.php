@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class ChessboardCellsTableSeeder extends Seeder
@@ -21,7 +22,11 @@ class ChessboardCellsTableSeeder extends Seeder
         for ($file = 'a'; $file <= self::CELLS_PER_FILE; $file++) {
             for ($rank = 1; $rank <= self::CELLS_PER_RANK; $rank++) {
                 DB::table('chessboard_cells')->insert(
-                    ['file' => $file, 'rank' => $rank]
+                    ['file' => $file,
+                     'rank' => $rank,
+                     'created_at' => Carbon::now(),
+                     'updated_at' => Carbon::now()
+                    ]
                 );
             }
         }

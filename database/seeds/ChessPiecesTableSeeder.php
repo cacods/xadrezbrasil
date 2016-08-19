@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class ChessPiecesTableSeeder extends Seeder
@@ -18,7 +19,7 @@ class ChessPiecesTableSeeder extends Seeder
     public function run()
     {
         /**
-         * Light pieces
+         * Insert light pieces
          */
         /*
          * Light King
@@ -28,7 +29,9 @@ class ChessPiecesTableSeeder extends Seeder
             'unicode' => '2654',
             'html_code' => '9812',
             'name' => 'King',
-            'is_dark' => false
+            'is_dark' => false,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
         /*
@@ -39,7 +42,9 @@ class ChessPiecesTableSeeder extends Seeder
             'unicode' => '2655',
             'html_code' => '9813',
             'name' => 'Queen',
-            'is_dark' => false
+            'is_dark' => false,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
         /*
@@ -51,7 +56,9 @@ class ChessPiecesTableSeeder extends Seeder
                 'unicode' => '2656',
                 'html_code' => '9814',
                 'name' => 'Rook',
-                'is_dark' => false
+                'is_dark' => false,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
 
@@ -64,7 +71,9 @@ class ChessPiecesTableSeeder extends Seeder
                 'unicode' => '2657',
                 'html_code' => '9815',
                 'name' => 'Bishop',
-                'is_dark' => false
+                'is_dark' => false,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
 
@@ -77,7 +86,9 @@ class ChessPiecesTableSeeder extends Seeder
                 'unicode' => '2658',
                 'html_code' => '9816',
                 'name' => 'Knight',
-                'is_dark' => false
+                'is_dark' => false,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
 
@@ -90,12 +101,14 @@ class ChessPiecesTableSeeder extends Seeder
                 'unicode' => '2659',
                 'html_code' => '9817',
                 'name' => 'King',
-                'is_dark' => false
+                'is_dark' => false,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
 
         /**
-         * Dark pieces
+         * Insert dark pieces
          */
 
         /*
@@ -106,7 +119,9 @@ class ChessPiecesTableSeeder extends Seeder
             'unicode' => '265A',
             'html_code' => '9818',
             'name' => 'King',
-            'is_dark' => true
+            'is_dark' => true,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
         /*
@@ -117,7 +132,9 @@ class ChessPiecesTableSeeder extends Seeder
             'unicode' => '265B',
             'html_code' => '9819',
             'name' => 'Queen',
-            'is_dark' => true
+            'is_dark' => true,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
         /*
@@ -129,7 +146,9 @@ class ChessPiecesTableSeeder extends Seeder
                 'unicode' => '265C',
                 'html_code' => '9820',
                 'name' => 'Rook',
-                'is_dark' => true
+                'is_dark' => true,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
 
@@ -142,7 +161,9 @@ class ChessPiecesTableSeeder extends Seeder
                 'unicode' => '265D',
                 'html_code' => '9821',
                 'name' => 'Bishop',
-                'is_dark' => true
+                'is_dark' => true,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
 
@@ -155,7 +176,9 @@ class ChessPiecesTableSeeder extends Seeder
                 'unicode' => '265E',
                 'html_code' => '9822',
                 'name' => 'Knight',
-                'is_dark' => true
+                'is_dark' => true,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
 
@@ -168,7 +191,9 @@ class ChessPiecesTableSeeder extends Seeder
                 'unicode' => '265F',
                 'html_code' => '9823',
                 'name' => 'Pawn',
-                'is_dark' => true
+                'is_dark' => true,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
     }
