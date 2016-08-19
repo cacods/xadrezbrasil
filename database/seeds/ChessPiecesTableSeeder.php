@@ -100,7 +100,7 @@ class ChessPiecesTableSeeder extends Seeder
                 'code' => 'P' . $pawn,
                 'unicode' => '2659',
                 'html_code' => '9817',
-                'name' => 'King',
+                'name' => 'Pawn',
                 'is_dark' => false,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
