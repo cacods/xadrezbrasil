@@ -14,7 +14,8 @@ class ChessboardController extends Controller
      */
     public function index()
     {
-        // Fetch database to pick chess pieces
+        // Fetch database to pick chessboard cells and chess pieces
+
 
         return view('chessboard');
     }
