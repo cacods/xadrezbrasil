@@ -8,6 +8,6 @@ class ChessPiece extends Model
 {
     public function scopeIsDark($query)
     {
-        return $this->where('is_dark', true);
+        return $query->where('is_dark', true);
     }
 }

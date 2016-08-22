@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ChessboardCell;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -14,7 +15,10 @@ class ChessboardController extends Controller
      */
     public function index()
     {
-        // Fetch database to pick chessboard cells and chess pieces
+        $chessboard = new ChessboardCell;
+        $chessboard->initializePiecesOnChessboard();
+
+        dd();
 
 
         return view('chessboard');
