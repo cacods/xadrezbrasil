@@ -14,21 +14,12 @@ class ChessboardCell extends Model
     const SECOND_ROW_WHITE = 2;
 
     /**
-     * A chessboard cell has one piece or null.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function chessPiece()
-    {
-        return $this->belongsTo('App\ChessPiece', 'current_piece');
-    }
-
-    /**
      * Initialize pieces in chessboard.
      */
     public function initializePiecesOnChessboard()
     {
         // Get pieces
+        // TODO: make a loop!
         $blackPawns = $this->getPieces('pawn', 'black');
         $whitePawns = $this->getPieces('pawn', 'white');
         $blackRooks = $this->getPieces('rook', 'black');
@@ -67,11 +58,7 @@ class ChessboardCell extends Model
      */
     public function getPieces($piece, $player)
     {
-        if ($player == 'black') {
-            $isBlack = true;
-        } else {
-            $isBlack = false;
-        }
+        $isBlack = $player == 'black' ? true : false;
 
         $quantity = self::INTERMEDIATE_PIECES; // initializes with common case
 
@@ -176,7 +163,7 @@ class ChessboardCell extends Model
      */
     public function putPieceOnBoard($file, $rank, $piece)
     {
-        $chessboardCell = ChessboardCell::where('file', $file)
+        $chessboardCell = $this->where('file', $file)
             ->where('rank', $rank)
             ->first();
 
@@ -186,6 +173,16 @@ class ChessboardCell extends Model
         $chessboardCell->current_piece = $piece->id;
 
         $chessboardCell->save();
+    }
+
+    /**
+     * A chessboard cell has one piece or null.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function chessPiece()
+    {
+        return $this->belongsTo('App\ChessPiece', 'current_piece');
     }
 
 }
