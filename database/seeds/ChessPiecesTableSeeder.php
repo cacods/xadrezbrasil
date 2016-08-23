@@ -23,6 +23,45 @@ class ChessPiecesTableSeeder extends Seeder
          */
 
         /*
+         * Second Black Rook
+         */
+        DB::table('chess_pieces')->insert([
+            'code' => 'R2',
+            'unicode' => '265C',
+            'html_code' => '&#9820;',
+            'name' => 'Rook',
+            'is_black' => true,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        /*
+         * Second Black Knight
+         */
+        DB::table('chess_pieces')->insert([
+            'code' => 'K2',
+            'unicode' => '265E',
+            'html_code' => '&#9822;',
+            'name' => 'Knight',
+            'is_black' => true,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        /*
+         * Second Black Bishop
+         */
+        DB::table('chess_pieces')->insert([
+            'code' => 'B2',
+            'unicode' => '265D',
+            'html_code' => '&#9821;',
+            'name' => 'Bishop',
+            'is_black' => true,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        /*
          * Black King
          */
         DB::table('chess_pieces')->insert([
@@ -49,49 +88,43 @@ class ChessPiecesTableSeeder extends Seeder
         ]);
 
         /*
-         * Black Rooks
+         * First Black Bishop
          */
-        for ($rook = 1; $rook <= self::ROOKS; $rook++) {
-            DB::table('chess_pieces')->insert([
-                'code' => 'R' . $rook,
-                'unicode' => '265C',
-                'html_code' => '&#9820;',
-                'name' => 'Rook',
-                'is_black' => true,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ]);
-        }
+        DB::table('chess_pieces')->insert([
+            'code' => 'B1',
+            'unicode' => '265D',
+            'html_code' => '&#9821;',
+            'name' => 'Bishop',
+            'is_black' => true,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
 
         /*
-         * Black Knights
+         * First Black Knight
          */
-        for ($knight = 1; $knight <= self::KNIGHTS; $knight++) {
-            DB::table('chess_pieces')->insert([
-                'code' => 'K' . $knight,
-                'unicode' => '265E',
-                'html_code' => '&#9822;',
-                'name' => 'Knight',
-                'is_black' => true,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ]);
-        }
+        DB::table('chess_pieces')->insert([
+            'code' => 'K1',
+            'unicode' => '265E',
+            'html_code' => '&#9822;',
+            'name' => 'Knight',
+            'is_black' => true,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
 
         /*
-         * Black Bishops
+         * First Black Rook
          */
-        for ($bishop = 1; $bishop <= self::BISHOPS; $bishop++) {
-            DB::table('chess_pieces')->insert([
-                'code' => 'B' . $bishop,
-                'unicode' => '265D',
-                'html_code' => '&#9821;',
-                'name' => 'Bishop',
-                'is_black' => true,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ]);
-        }
+        DB::table('chess_pieces')->insert([
+            'code' => 'R1',
+            'unicode' => '265C',
+            'html_code' => '&#9820;',
+            'name' => 'Rook',
+            'is_black' => true,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
 
         /*
          * Black Pawns
@@ -111,6 +144,23 @@ class ChessPiecesTableSeeder extends Seeder
         /**
          * Insert white pieces
          */
+
+        /*
+         * White Pawns
+         */
+        for ($pawn = 1; $pawn <= self::PAWNS; $pawn++) {
+            DB::table('chess_pieces')->insert([
+                'code' => 'P' . $pawn,
+                'unicode' => '2659',
+                'html_code' => '&#9817;',
+                'name' => 'Pawn',
+                'is_black' => false,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ]);
+        }
+
+
         /*
          * White King
          */
@@ -138,63 +188,43 @@ class ChessPiecesTableSeeder extends Seeder
         ]);
 
         /*
-         * White Rooks
+         * Second White Bishop
          */
-        for ($rook = 1; $rook <= self::ROOKS; $rook++) {
-            DB::table('chess_pieces')->insert([
-                'code' => 'R' . $rook,
-                'unicode' => '2656',
-                'html_code' => '&#9814;',
-                'name' => 'Rook',
-                'is_black' => false,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ]);
-        }
+        DB::table('chess_pieces')->insert([
+            'code' => 'B2',
+            'unicode' => '2657',
+            'html_code' => '&#9815;',
+            'name' => 'Bishop',
+            'is_black' => false,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
 
         /*
-         * White Knights
+         * Second White Knight
          */
-        for ($knight = 1; $knight <= self::KNIGHTS; $knight++) {
-            DB::table('chess_pieces')->insert([
-                'code' => 'K' . $knight,
-                'unicode' => '2658',
-                'html_code' => '&#9816;',
-                'name' => 'Knight',
-                'is_black' => false,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ]);
-        }
+        DB::table('chess_pieces')->insert([
+            'code' => 'K2',
+            'unicode' => '2658',
+            'html_code' => '&#9816;',
+            'name' => 'Knight',
+            'is_black' => false,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
 
         /*
-         * White Bishops
+         * Second White Rook
          */
-        for ($bishop = 1; $bishop <= self::BISHOPS; $bishop++) {
-            DB::table('chess_pieces')->insert([
-                'code' => 'B' . $bishop,
-                'unicode' => '2657',
-                'html_code' => '&#9815;',
-                'name' => 'Bishop',
-                'is_black' => false,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ]);
-        }
-
-        /*
-         * White Pawns
-         */
-        for ($pawn = 1; $pawn <= self::PAWNS; $pawn++) {
-            DB::table('chess_pieces')->insert([
-                'code' => 'P' . $pawn,
-                'unicode' => '2659',
-                'html_code' => '&#9817;',
-                'name' => 'Pawn',
-                'is_black' => false,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ]);
-        }
+        DB::table('chess_pieces')->insert([
+            'code' => 'R2',
+            'unicode' => '2656',
+            'html_code' => '&#9814;',
+            'name' => 'Rook',
+            'is_black' => false,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
     }
+
 }
