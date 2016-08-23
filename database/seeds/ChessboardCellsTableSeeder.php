@@ -5,9 +5,9 @@ use Illuminate\Database\Seeder;
 
 class ChessboardCellsTableSeeder extends Seeder
 {
-    /* The number of cells per file/per rank (8 x 8) */
-    const CELLS_PER_FILE = 'h';
-    const CELLS_PER_RANK = 8;
+    /* The number of cells per file/rank (8 x 8) */
+    const FINAL_FILE = 'h';
+    const FINAL_RANK = 8;
 
     /**
      * Run the database seeds.
@@ -19,8 +19,8 @@ class ChessboardCellsTableSeeder extends Seeder
         /*
          * Seed chessboard cells with file/rank identification
          */
-        for ($file = 'a'; $file <= self::CELLS_PER_FILE; $file++) {
-            for ($rank = 1; $rank <= self::CELLS_PER_RANK; $rank++) {
+        for ($file = 'a'; $file <= self::FINAL_FILE; $file++) {
+            for ($rank = 1; $rank <= self::FINAL_RANK; $rank++) {
                 DB::table('chessboard_cells')->insert(
                     ['file' => $file,
                      'rank' => $rank,

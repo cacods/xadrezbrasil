@@ -29,18 +29,18 @@ class ChessboardCell extends Model
     public function initializePiecesOnChessboard()
     {
         // Get pieces
-        $blackPawns = $this->getPieces('pawn', 'dark');
-        $whitePawns = $this->getPieces('pawn', 'light');
-        $blackRooks = $this->getPieces('rook', 'dark');
-        $whiteRooks = $this->getPieces('rook', 'light');
-        $blackKnights = $this->getPieces('knight', 'dark');
-        $whiteKnights = $this->getPieces('knight', 'light');
-        $blackBishops = $this->getPieces('bishop', 'dark');
-        $whiteBishops = $this->getPieces('bishop', 'light');
-        $blackQueen = $this->getPieces('queen', 'dark');
-        $whiteQueen = $this->getPieces('queen', 'light');
-        $blackKing = $this->getPieces('king', 'dark');
-        $whiteKing = $this->getPieces('king', 'light');
+        $blackPawns = $this->getPieces('pawn', 'black');
+        $whitePawns = $this->getPieces('pawn', 'white');
+        $blackRooks = $this->getPieces('rook', 'black');
+        $whiteRooks = $this->getPieces('rook', 'white');
+        $blackKnights = $this->getPieces('knight', 'black');
+        $whiteKnights = $this->getPieces('knight', 'white');
+        $blackBishops = $this->getPieces('bishop', 'black');
+        $whiteBishops = $this->getPieces('bishop', 'white');
+        $blackQueen = $this->getPieces('queen', 'black');
+        $whiteQueen = $this->getPieces('queen', 'white');
+        $blackKing = $this->getPieces('king', 'black');
+        $whiteKing = $this->getPieces('king', 'white');
 
         // Put pieces on initial board positions
         $this->putPieces('pawn', 'black', $blackPawns);
@@ -67,10 +67,10 @@ class ChessboardCell extends Model
      */
     public function getPieces($piece, $player)
     {
-        if ($player == 'dark') {
-            $isDark = true;
+        if ($player == 'black') {
+            $isBlack = true;
         } else {
-            $isDark = false;
+            $isBlack = false;
         }
 
         $quantity = self::INTERMEDIATE_PIECES; // initializes with common case
@@ -90,9 +90,9 @@ class ChessboardCell extends Model
                 $codePrefix = 'B';
                 break;
             case 'king':
-                return ChessPiece::where('code', 'K')->where('is_dark', $isDark)->get();
+                return ChessPiece::where('code', 'K')->where('is_black', $isBlack)->get();
             case 'queen':
-                return ChessPiece::where('code', 'Q')->where('is_dark', $isDark)->get();
+                return ChessPiece::where('code', 'Q')->where('is_black', $isBlack)->get();
             default:
                 // TODO: Generates exception (?)
         }
@@ -100,7 +100,7 @@ class ChessboardCell extends Model
         $pieces = [];
         for ($pieceNumber = 1; $pieceNumber <= $quantity; $pieceNumber++) {
             $pieces[] = ChessPiece::where('code', $codePrefix . $pieceNumber) //TODO: verificar se deve corrigir $codePrefix
-            ->where('is_dark', $isDark)
+            ->where('is_black', $isBlack)
                 ->first();
         }
 

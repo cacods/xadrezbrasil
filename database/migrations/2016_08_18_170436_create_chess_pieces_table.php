@@ -18,7 +18,7 @@ class CreateChessPiecesTable extends Migration
             $table->string('unicode');
             $table->string('html_code');
             $table->string('name');
-            $table->boolean('is_dark');
+            $table->boolean('is_black');
             $table->timestamps();
         });
     }
