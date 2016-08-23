@@ -160,6 +160,44 @@ class ChessPiecesTableSeeder extends Seeder
             ]);
         }
 
+        /*
+         * First White Rook
+         */
+        DB::table('chess_pieces')->insert([
+            'code' => 'R1',
+            'unicode' => '2656',
+            'html_code' => '&#9814;',
+            'name' => 'Rook',
+            'is_black' => false,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        /*
+         * First White Knight
+         */
+        DB::table('chess_pieces')->insert([
+            'code' => 'K1',
+            'unicode' => '2658',
+            'html_code' => '&#9816;',
+            'name' => 'Knight',
+            'is_black' => false,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        /*
+         * First White Bishop
+         */
+        DB::table('chess_pieces')->insert([
+            'code' => 'B1',
+            'unicode' => '2657',
+            'html_code' => '&#9815;',
+            'name' => 'Bishop',
+            'is_black' => false,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
 
         /*
          * White King
