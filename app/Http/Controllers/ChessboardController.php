@@ -15,12 +15,20 @@ class ChessboardController extends Controller
      */
     public function index()
     {
-        $chessboard = new ChessboardCell;
-        $chessboard->initializePiecesOnChessboard();
+        $chessboardCell = new ChessboardCell;
+        $chessboardCell->initializePiecesOnChessboard();
 
-        dd();
+        $chessboardInitial = $chessboardCell->all();
 
+        $chessboard = [];
+        foreach ($chessboardInitial as $cell) {
+            if (! is_null($cell->chessPiece)) {
+                $chessboard[$cell->file][$cell->rank] = $cell->chessPiece->html_code;
+            } else {
+                $chessboard[$cell->file][$cell->rank] = null;
+            }
+        }
 
-        return view('chessboard');
+        return view('chessboard', compact('chessboard'));
     }
 }

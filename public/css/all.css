@@ -8,6 +8,8 @@ table.chessboard {
 }
 td.chessboard-cell {
     width: 70px; height: 70px;
+    font-size: 50px;
+    text-align: center;
 }
 tr.chessboard-row:nth-child(odd) td.chessboard-cell:nth-child(even),
 tr.chessboard-row:nth-child(even) td.chessboard-cell:nth-child(odd) {

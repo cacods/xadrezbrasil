@@ -8,10 +8,20 @@ class ChessboardCell extends Model
 {
     const PAWN_PIECES = 8;
     const INTERMEDIATE_PIECES = 2; // pieces between King/Queen and pawns are intermediate in power
-    const FIRST_ROW_BLACK = 1;
-    const SECOND_ROW_BLACK = 2;
-    const FIRST_ROW_WHITE = 8;
-    const SECOND_ROW_WHITE = 7;
+    const FIRST_ROW_BLACK = 8;
+    const SECOND_ROW_BLACK = 7;
+    const FIRST_ROW_WHITE = 1;
+    const SECOND_ROW_WHITE = 2;
+
+    /**
+     * A chessboard cell has one piece or null.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function chessPiece()
+    {
+        return $this->belongsTo('App\ChessPiece', 'current_piece');
+    }
 
     /**
      * Initialize pieces in chessboard.
