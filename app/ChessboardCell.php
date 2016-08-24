@@ -17,7 +17,7 @@ class ChessboardCell extends Model
      *
      * The pieces table has been seeded with pieces
      * arranged in up/down, left/right order, so we
-     * can securily make a loop in cells in that order
+     * can safely make a loop in cells in that order
      * to put the pieces in right files/ranks.
      */
     public function initializePiecesOnChessboard()
@@ -39,7 +39,7 @@ class ChessboardCell extends Model
     {
         $firstRank = self::FIRST_ROW_BLACK;
         $secondRank = self::SECOND_ROW_BLACK;
-        
+
         if (! $isBlack) {
             $firstRank = self::SECOND_ROW_WHITE;
             $secondRank = self::FIRST_ROW_WHITE;
