@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class ChessPiece extends Model
 {
-    public function scopeIsDark($query)
+    public function scopeIsBlack($query)
     {
-        return $query->where('is_dark', true);
+        return $query->where('is_black', true);
+    }
+
+    public function scopeIsWhite($query)
+    {
+        return $query->where('is_black', false);
     }
 }
