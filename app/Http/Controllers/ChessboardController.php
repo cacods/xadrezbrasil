@@ -18,17 +18,27 @@ class ChessboardController extends Controller
         $chessboardCell = new ChessboardCell;
         $chessboardCell->initializePiecesOnChessboard();
 
-        $chessboardInitial = $chessboardCell->all();
+        $chessboard = $this->objectCellsToArray($chessboardCell->all());
 
+        return view('chessboard', compact('chessboard'));
+    }
+
+    /**
+     * Make matrix to ease process of positioning pieces on board in view.
+     *
+     * @param $chessboardInitial
+     * @return array
+     */
+    private function objectCellsToArray($chessboardInitial)
+    {
         $chessboard = [];
         foreach ($chessboardInitial as $cell) {
-            if (! is_null($cell->chessPiece)) {
+            if (!is_null($cell->chessPiece)) {
                 $chessboard[$cell->file][$cell->rank] = $cell->chessPiece->html_code;
             } else {
                 $chessboard[$cell->file][$cell->rank] = null;
             }
         }
-
-        return view('chessboard', compact('chessboard'));
+        return $chessboard;
     }
 }
