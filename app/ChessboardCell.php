@@ -14,11 +14,6 @@ class ChessboardCell extends Model
 
     /**
      * Initialize pieces on chessboard.
-     *
-     * The pieces table has been seeded with pieces
-     * arranged in up/down, left/right order, so we
-     * can safely make a loop in cells in that order
-     * to put the pieces in right files/ranks.
      */
     public function initializePiecesOnChessboard()
     {
@@ -32,6 +27,11 @@ class ChessboardCell extends Model
     /**
      * Put pieces in their initial positions on board.
      *
+     * The pieces table has been seeded with pieces
+     * arranged in up/down, left/right order, so we
+     * can safely make a loop in cells in that order
+     * to put the pieces in right files/ranks.
+     * 
      * @param $pieces
      * @param $isBlack
      */
